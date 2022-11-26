@@ -4,3 +4,12 @@ export interface HTMLElementProps {
   innerHtml?: string;
   id?: string;
 }
+
+export interface SVGElementProps {
+  cssClassList?: string[];
+  boxWidth?: string;
+  boxHeight?: string;
+  attributes?: [string, string][];
+  color?: string;
+  id?: string;
+}
