@@ -28,7 +28,7 @@ export class HTMLElementFactory {
   }
 
   public static createSVGElement(url: string, type: string, props: SVGElementProps = {}): SVGSVGElement {
-    const { cssClassList, boxWidth = 'auto', boxHeight = 'auto', attributes, color, id } = props;
+    const { cssClassList, boxWidth = '100%', boxHeight = '100%', attributes, color, id } = props;
 
     const svg: SVGSVGElement = document.createElementNS(SVG_NS, 'svg');
     svg.setAttributeNS(null, 'width', `${boxWidth}`);

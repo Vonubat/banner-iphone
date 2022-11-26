@@ -1,7 +1,14 @@
 @import 'normalize.css';
+@import './base/fonts';
 
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+h1 {
+  font-family: 'SF Pro Text';
+  font-weight: 400;
 }

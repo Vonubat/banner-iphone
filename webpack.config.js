@@ -33,24 +33,22 @@ const baseConfig = {
         test: /\.s[ac]ss$/i,
         use: [
           {
-            loader: 'style-loader'
+            loader: 'style-loader',
           },
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
           },
           {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: () => [
-                  require('autoprefixer')
-                ]
-              }
-            }
+                plugins: () => [require('autoprefixer')],
+              },
+            },
           },
           {
-            loader: 'sass-loader'
-          }
+            loader: 'sass-loader',
+          },
         ],
       },
     ],
@@ -60,7 +58,7 @@ const baseConfig = {
   },
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, '../build'),
+    path: path.resolve(__dirname, './build'),
     assetModuleFilename: 'assets/[name][ext]',
   },
   plugins: [
@@ -71,10 +69,7 @@ const baseConfig = {
     new CleanWebpackPlugin(),
     new EslintPlugin({ extensions: 'ts' }),
     new CopyPlugin({
-      patterns: [
-        { from: './src/assets', to: './../build/assets' },
-        // { from: './src/db', to: './../build/db' },
-      ],
+      patterns: [{ from: './src/assets', to: './assets' }],
     }),
   ],
 };

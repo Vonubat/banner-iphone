@@ -5,7 +5,7 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    static: path.resolve(__dirname, '../build'),
+    static: path.resolve(__dirname, './build'),
     hot: true,
   },
 };
