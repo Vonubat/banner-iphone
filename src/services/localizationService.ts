@@ -6,47 +6,31 @@ import nl from '../localization/nl.json';
 import ru from '../localization/ru.json';
 import zh from '../localization/zh.json';
 import { Localization } from '../types/localization';
+import { getPreferredLanguage } from '../utils/systemLanguageHelper';
+import { Language } from '../constants';
 
 export class LocalizationService {
-  private _en: Localization = en;
+  private _lang: Language;
 
-  private _es: Localization = es;
-
-  private _fr: Localization = fr;
-
-  private _ja: Localization = ja;
-
-  private _nl: Localization = nl;
-
-  private _ru: Localization = ru;
-
-  private _zh: Localization = zh;
-
-  public get en() {
-    return this._en;
+  constructor() {
+    this._lang = getPreferredLanguage();
   }
 
-  public get es() {
-    return this._es;
-  }
+  private en: Localization = en;
 
-  public get fr() {
-    return this._fr;
-  }
+  private es: Localization = es;
 
-  public get ja() {
-    return this._ja;
-  }
+  private fr: Localization = fr;
 
-  public get nl() {
-    return this._nl;
-  }
+  private ja: Localization = ja;
 
-  public get ru() {
-    return this._ru;
-  }
+  private nl: Localization = nl;
 
-  public get zh() {
-    return this._zh;
+  private ru: Localization = ru;
+
+  private zh: Localization = zh;
+
+  public get langData(): Localization {
+    return this[this._lang];
   }
 }

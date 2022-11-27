@@ -2,15 +2,15 @@ import { LocalizationService } from '../services/localizationService';
 import { createHTMLElement, createSVGElement } from '../utils/htmlElementFactory';
 
 export class Header extends LocalizationService {
-  createRestoreAnchor(): HTMLAnchorElement {
+  private createRestoreAnchor(): HTMLAnchorElement {
     return createHTMLElement('a', {
       attributes: [['href', '#']],
       cssClassList: ['anchor-restore'],
-      innerHtml: this.en.Restore,
+      innerHtml: this.langData.Restore,
     });
   }
 
-  createCloseAnchor(): HTMLAnchorElement {
+  private createCloseAnchor(): HTMLAnchorElement {
     const closeAnchor = createHTMLElement('a', {
       attributes: [['href', '#']],
       cssClassList: ['anchor-cancel'],
@@ -23,7 +23,7 @@ export class Header extends LocalizationService {
     return closeAnchor;
   }
 
-  draw(): HTMLElement {
+  public draw(): HTMLElement {
     const header = createHTMLElement('header', {
       cssClassList: ['header'],
     });
