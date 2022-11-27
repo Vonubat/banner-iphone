@@ -2,9 +2,12 @@ import { SVG_NS, XLINK_NS } from '../constants';
 import { HTMLElementProps, SVGElementProps } from '../types/utilTypes';
 
 export class HTMLElementFactory {
-  public static createHTMLElement(tagName: keyof HTMLElementTagNameMap, props: HTMLElementProps = {}): HTMLElement {
+  public static createHTMLElement<Tag extends keyof HTMLElementTagNameMap>(
+    tagName: Tag,
+    props: HTMLElementProps = {}
+  ): HTMLElementTagNameMap[Tag] {
     const { cssClassList, attributes, innerHtml, id } = props;
-    const element: HTMLElement = document.createElement(tagName);
+    const element: HTMLElementTagNameMap[Tag] = document.createElement(tagName);
 
     if (cssClassList) {
       element.classList.add(...cssClassList);
