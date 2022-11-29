@@ -28,12 +28,3 @@
     @include set-bg-image($x3-bg-img);
   }
 }
-
-h1 {
-  font-family: 'SF Pro Text';
-  font-weight: 400;
-
-  @include for-device(map-get($iphone, 14)) {
-    color: white;
-  }
-}
