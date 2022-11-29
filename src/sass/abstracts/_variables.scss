@@ -1,0 +1,26 @@
+$media: screen;
+$ratio-feature: -webkit-min-device-pixel-ratio;
+$orientation-value: portrait;
+
+$iphone: (
+  14: 'iphone-14',
+  X-11pro: 'X-11pro',
+  8plus: '8plus',
+  SE-8: 'SE-8',
+);
+
+$width-14: 390px;
+$height-14: 844px;
+$ratio-14: 3;
+
+$width-X-11pro: 375px;
+$height-X-11pro: 812px;
+$ratio-X-11pro: 3;
+
+$width-8plus: 414px;
+$height-8plus: 736px;
+$ratio-8plus: 2.6;
+
+$width-SE-8: 375px;
+$height-SE-8: 667px;
+$ratio-SE-8: 2;

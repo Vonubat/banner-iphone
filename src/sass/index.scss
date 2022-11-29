@@ -1,5 +1,7 @@
 @import 'normalize.css';
 @import './base/fonts';
+@import './abstracts/variables';
+@import './abstracts/mixins';
 @import './components/anchors';
 @import './layout/header';
 
@@ -14,4 +16,12 @@
 h1 {
   font-family: 'SF Pro Text';
   font-weight: 400;
+
+  @include for-device(map-get($iphone, SE-8)) {
+    color: rebeccapurple;
+  }
+
+  @include for-device(map-get($iphone, 14)) {
+    color: white;
+  }
 }
