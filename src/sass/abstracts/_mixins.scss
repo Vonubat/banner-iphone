@@ -17,3 +17,9 @@
     }
   }
 }
+
+@mixin set-bg-image($img) {
+  background-image: url($img);
+  background-position: center;
+  background-size: cover;
+}

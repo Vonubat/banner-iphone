@@ -11,15 +11,27 @@
   align-items: center;
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+  @include for-device(map-get($iphone, SE-8)) {
+    @include set-bg-image($x1-bg-img);
+  }
+
+  @include for-device(map-get($iphone, 8plus)) {
+    @include set-bg-image($x2-bg-img);
+  }
+
+  @include for-device(map-get($iphone, X-11pro)) {
+    @include set-bg-image($x3-bg-img);
+  }
+
+  @include for-device(map-get($iphone, 14)) {
+    @include set-bg-image($x3-bg-img);
+  }
 }
 
 h1 {
   font-family: 'SF Pro Text';
   font-weight: 400;
-
-  @include for-device(map-get($iphone, SE-8)) {
-    color: rebeccapurple;
-  }
 
   @include for-device(map-get($iphone, 14)) {
     color: white;

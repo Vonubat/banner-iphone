@@ -16,5 +16,3 @@ const header = new Header().render();
 document.body.appendChild(header);
 document.body.appendChild(svg);
 document.body.appendChild(h1);
-
-document.body.style.background = 'red';
