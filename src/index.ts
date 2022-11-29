@@ -11,7 +11,7 @@ to All Features`,
 
 const svg = createSVGElement('./assets/shape-1.svg', 'shape-1');
 
-const header = new Header().draw();
+const header = new Header().render();
 
 document.body.appendChild(header);
 document.body.appendChild(svg);

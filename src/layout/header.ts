@@ -23,7 +23,7 @@ export class Header extends LocalizationService {
     return closeAnchor;
   }
 
-  public draw(): HTMLElement {
+  public render(): HTMLElement {
     const header = createHTMLElement('header', {
       cssClassList: ['header'],
     });

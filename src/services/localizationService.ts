@@ -5,16 +5,12 @@ import ja from '../localization/ja.json';
 import nl from '../localization/nl.json';
 import ru from '../localization/ru.json';
 import zh from '../localization/zh.json';
-import { Localization } from '../types/localization';
-import { /* getPreferredLanguage, */ searchParamsHandler } from '../utils/systemLanguageHelper';
 import { Language } from '../constants';
+import { Localization } from '../types/localization';
+import { searchParamsHandler } from '../utils/systemLanguageHelper';
 
 export class LocalizationService {
-  private _lang: Language;
-
-  constructor() {
-    this._lang = searchParamsHandler();
-  }
+  private lang: Language = searchParamsHandler();
 
   private en: Localization = en;
 
@@ -31,6 +27,6 @@ export class LocalizationService {
   private zh: Localization = zh;
 
   public get langData(): Localization {
-    return this[this._lang];
+    return this[this.lang];
   }
 }
