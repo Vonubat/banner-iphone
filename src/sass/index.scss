@@ -1,8 +1,10 @@
 @import 'normalize.css';
 @import './base/fonts';
+@import './base/typography';
 @import './abstracts/variables';
 @import './abstracts/mixins';
 @import './components/anchors';
+@import './components/title';
 @import './layout/header';
 
 #root {
