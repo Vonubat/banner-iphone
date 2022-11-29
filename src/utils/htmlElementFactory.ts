@@ -1,5 +1,6 @@
 import { SVG_NS, XLINK_NS } from '../constants';
 import { HTMLElementProps, SVGElementProps } from '../types/utilTypes';
+import { svgFileNameHandler } from './svgFileNameHandler';
 
 export class HTMLElementFactory {
   public static createHTMLElement<Tag extends keyof HTMLElementTagNameMap>(
@@ -30,7 +31,7 @@ export class HTMLElementFactory {
     return element;
   }
 
-  public static createSVGElement(url: string, type: string, props: SVGElementProps = {}): SVGSVGElement {
+  public static createSVGElement(url: string, props: SVGElementProps = {}): SVGSVGElement {
     const { cssClassList, boxWidth = '100%', boxHeight = '100%', attributes, color, id } = props;
 
     const svg: SVGSVGElement = document.createElementNS(SVG_NS, 'svg');
@@ -39,7 +40,7 @@ export class HTMLElementFactory {
     svg.style.fill = `${color}`;
 
     const use: SVGUseElement = document.createElementNS(SVG_NS, 'use');
-    use.setAttributeNS(XLINK_NS, 'xlink:href', `${url}#${type}`);
+    use.setAttributeNS(XLINK_NS, 'xlink:href', svgFileNameHandler(url));
 
     svg.appendChild(use);
 

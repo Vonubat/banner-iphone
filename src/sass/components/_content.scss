@@ -1,0 +1,26 @@
+.content-container {
+  width: 208.5px;
+  height: 91.45px;
+  margin-left: 11px;
+  margin-top: 29px;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon-wrapper {
+  @include center-inside-elem();
+  width: 26px;
+}
+
+/*
+.title-content__unlim-docs {
+}
+.title-content__ocr {
+}
+.title-content__export {
+}
+*/

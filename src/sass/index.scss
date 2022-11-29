@@ -4,8 +4,9 @@
 @import './abstracts/variables';
 @import './abstracts/mixins';
 @import './components/anchors';
-@import './components/title';
 @import './layout/header';
+@import './components/title';
+@import './components/content';
 
 #root {
   display: flex;

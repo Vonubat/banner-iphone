@@ -23,3 +23,9 @@
   background-position: center;
   background-size: cover;
 }
+
+@mixin center-inside-elem() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

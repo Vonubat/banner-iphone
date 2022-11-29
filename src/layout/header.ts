@@ -15,7 +15,7 @@ export class Header extends LocalizationService {
       attributes: [['href', '#']],
       cssClassList: ['anchor-cancel'],
     });
-    const cancelIcon = createSVGElement('../assets/close.svg', 'close', {
+    const cancelIcon = createSVGElement('../assets/close.svg', {
       boxWidth: '16px',
       boxHeight: '16px',
     });

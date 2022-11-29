@@ -1,7 +1,5 @@
 .anchor-cancel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center-inside-elem();
   width: 24px;
   height: 24px;
 }
