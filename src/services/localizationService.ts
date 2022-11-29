@@ -6,14 +6,14 @@ import nl from '../localization/nl.json';
 import ru from '../localization/ru.json';
 import zh from '../localization/zh.json';
 import { Localization } from '../types/localization';
-import { getPreferredLanguage } from '../utils/systemLanguageHelper';
+import { /* getPreferredLanguage, */ searchParamsHandler } from '../utils/systemLanguageHelper';
 import { Language } from '../constants';
 
 export class LocalizationService {
   private _lang: Language;
 
   constructor() {
-    this._lang = getPreferredLanguage();
+    this._lang = searchParamsHandler();
   }
 
   private en: Localization = en;

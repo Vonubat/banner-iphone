@@ -15,3 +15,5 @@ export enum Language {
 }
 
 export const DEFAULT_LANGUAGE = Language.en;
+
+export const LANG = 'lang';
