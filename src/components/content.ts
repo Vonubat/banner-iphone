@@ -10,7 +10,7 @@ export class Content extends LocalizationService {
       height: '15px',
     },
     titleProps: {
-      cssClassList: ['title-content', 'title-content__unlim-docs'],
+      cssClassList: ['content-title', 'content-title__unlim-docs'],
       innerHtml: this.langData['Unlimited documents'],
     },
   };
@@ -22,7 +22,7 @@ export class Content extends LocalizationService {
       height: '22px',
     },
     titleProps: {
-      cssClassList: ['title-content', 'title-content__export'],
+      cssClassList: ['content-title', 'content-title__export'],
       innerHtml: this.langData['Count mode'],
     },
   };
@@ -34,7 +34,7 @@ export class Content extends LocalizationService {
       height: '22px',
     },
     titleProps: {
-      cssClassList: ['title-content', 'title-content__ocr'],
+      cssClassList: ['content-title', 'content-title__ocr'],
       innerHtml: this.langData['Text recognition (OCR)'],
     },
   };

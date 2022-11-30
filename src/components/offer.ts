@@ -33,11 +33,20 @@ export class Offer extends LocalizationService {
 
     const bg = createSVGElement('../assets/shape-2.svg', {
       cssClassList: ['section-bg', 'section-bg__annually'],
-      boxWidth: '134px',
+      boxWidth: '137px',
       boxHeight: '164px',
     });
 
-    annuallySection.appendChild(bg);
+    const saleBadge = createHTMLElement('div', {
+      cssClassList: ['sale-badge', 'sale-badge_passive'],
+    });
+
+    const badgeText = createHTMLElement('span', {
+      innerHtml: this.langData['-83%'],
+    });
+
+    saleBadge.appendChild(badgeText);
+    annuallySection.append(bg, saleBadge);
     return annuallySection;
   }
 
@@ -80,7 +89,7 @@ export class Offer extends LocalizationService {
 
   private buildMonthlySection(): HTMLDivElement {
     const section = this.createMonthlySection();
-    const title = this.createSectionTitle(this.langData.Monthly, ['section-title_active']);
+    const title = this.createSectionTitle(this.langData.Monthly, ['section-title', 'section-title_active']);
     const subscribePrice = this.createSectionSubscribePrice(
       this.langData['<strong>{{price}}</strong><br>per month'],
       MONTHLY_SUBSCRIBE_PRICE
@@ -94,7 +103,7 @@ export class Offer extends LocalizationService {
 
   private buildAnnuallySection(): HTMLDivElement {
     const section = this.createAnnuallySection();
-    const title = this.createSectionTitle(this.langData.Annually, ['section-title_passive']);
+    const title = this.createSectionTitle(this.langData.Annually, ['section-title', 'section-title_passive']);
     const subscribePrice = this.createSectionSubscribePrice(
       this.langData['<strong>{{price}}</strong><br>per month'],
       ANNUALLY_SUBSCRIBE_PRICE

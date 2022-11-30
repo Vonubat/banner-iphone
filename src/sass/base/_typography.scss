@@ -8,14 +8,14 @@
 
 .title {
   font-family: 'SF Pro Display';
+  font-size: 36px;
+  line-height: 42px;
   text-align: center;
   color: #ffffff;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-  font-size: 36px;
-  line-height: 42px;
 }
 
-.title-content {
+.content-title {
   font-family: 'SF Pro Text';
   font-size: 17px;
   line-height: 30px;
@@ -24,18 +24,34 @@
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.684495);
 }
 
-.section-title_active {
+.section-title {
   font-family: 'SF Pro Display';
-  font-size: 18.7px;
-  line-height: 22px;
   text-align: center;
   color: #ffffff;
 }
 
+.section-title_active {
+  font-size: 18.7px;
+  line-height: 22px;
+}
+
 .section-title_passive {
-  font-family: 'SF Pro Display';
   font-size: 16.9983px;
   line-height: 20px;
+}
+
+.sale-badge {
+  font-family: 'SF Pro Display';
   text-align: center;
   color: #ffffff;
+}
+
+.sale-badge_active {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.sale-badge_passive {
+  font-size: 10px;
+  line-height: 12px;
 }

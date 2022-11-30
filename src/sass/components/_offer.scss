@@ -4,6 +4,7 @@
   align-items: center;
   width: 297px;
   height: 181px;
+  margin-top: 44px;
 }
 
 .section {
@@ -44,6 +45,26 @@
 }
 
 .section-bg__annually {
+}
+
+.sale-badge {
+  @include center-inside-elem-flex;
+  position: absolute;
+  top: -1px;
+  right: 2px;
+  background-color: #db0000;
+}
+
+.sale-badge_active {
+  width: 38px;
+  height: 38px;
+  border-radius: 19.2px;
+}
+
+.sale-badge_passive {
+  width: 32px;
+  height: 32px;
+  border-radius: 15px;
 }
 
 .section-title_active {
