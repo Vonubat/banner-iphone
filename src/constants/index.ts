@@ -17,3 +17,11 @@ export enum Language {
 export const DEFAULT_LANGUAGE = Language.en;
 
 export const LANG = 'lang';
+
+export const MONTHLY_SUBSCRIBE_PRICE = '$9.99';
+
+export const MONTHLY_COST = '$9.99';
+
+export const ANNUALLY_SUBSCRIBE_PRICE = '$19.99';
+
+export const ANNUALLY_COST = '$1.66';

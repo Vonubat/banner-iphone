@@ -12,7 +12,7 @@
 }
 
 .icon-wrapper {
-  @include center-inside-elem();
+  @include center-inside-elem-flex();
   width: 26px;
 }
 

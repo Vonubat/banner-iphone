@@ -1,6 +1,8 @@
 import { LocalizationService } from '../services/localizationService';
 import { Localization } from '../types/localization';
 import { createHTMLElement, createSVGElement } from '../utils/htmlElementFactory';
+import { ANNUALLY_COST, ANNUALLY_SUBSCRIBE_PRICE, MONTHLY_COST, MONTHLY_SUBSCRIBE_PRICE } from '../constants';
+import { addPrice } from '../utils/priceHandler';
 
 export class Offer extends LocalizationService {
   private createOfferContainer(): HTMLDivElement {
@@ -11,12 +13,13 @@ export class Offer extends LocalizationService {
 
   private createMonthlySection(): HTMLDivElement {
     const monthlySection = createHTMLElement('div', {
-      cssClassList: ['monthly-section'],
+      cssClassList: ['section', 'section__monthly', 'section__monthly_active'],
     });
 
     const bg = createSVGElement('../assets/shape-1.svg', {
+      cssClassList: ['section-bg', 'section-bg__monthly'],
       boxWidth: '151px',
-      boxHeight: '178px',
+      boxHeight: '180px',
     });
 
     monthlySection.appendChild(bg);
@@ -25,29 +28,31 @@ export class Offer extends LocalizationService {
 
   private createAnnuallySection(): HTMLDivElement {
     const annuallySection = createHTMLElement('div', {
-      cssClassList: ['annually-section'],
+      cssClassList: ['section', 'section__annually', 'section__annually_passive'],
     });
 
     const bg = createSVGElement('../assets/shape-2.svg', {
-      boxWidth: '151px',
-      boxHeight: '178px',
+      cssClassList: ['section-bg', 'section-bg__annually'],
+      boxWidth: '134px',
+      boxHeight: '164px',
     });
 
     annuallySection.appendChild(bg);
     return annuallySection;
   }
 
-  private createSectionTitle(innerHtml: Localization[keyof Localization]): HTMLSpanElement {
+  private createSectionTitle(innerHtml: Localization[keyof Localization], cssClassList: string[]): HTMLSpanElement {
     return createHTMLElement('span', {
-      cssClassList: ['section-title'],
+      cssClassList: [...cssClassList],
       innerHtml,
     });
   }
 
-  private createSectionSubscribePrice(innerHtml: Localization[keyof Localization]): HTMLSpanElement {
+  private createSectionSubscribePrice(innerHtml: Localization[keyof Localization], price: string): HTMLSpanElement {
+    const modifiedInnerHtml = addPrice(innerHtml, price);
     return createHTMLElement('span', {
       cssClassList: ['section-subscribe-price'],
-      innerHtml,
+      innerHtml: modifiedInnerHtml,
     });
   }
 
@@ -65,19 +70,23 @@ export class Offer extends LocalizationService {
     return saleFeatureContainer;
   }
 
-  private createSectionCost(innerHtml: Localization[keyof Localization]): HTMLSpanElement {
+  private createSectionCost(innerHtml: Localization[keyof Localization], price: string): HTMLSpanElement {
+    const modifiedInnerHtml = addPrice(innerHtml, price);
     return createHTMLElement('span', {
       cssClassList: ['section-cost'],
-      innerHtml,
+      innerHtml: modifiedInnerHtml,
     });
   }
 
   private buildMonthlySection(): HTMLDivElement {
     const section = this.createMonthlySection();
-    const title = this.createSectionTitle(this.langData.Monthly);
-    const subscribePrice = this.createSectionSubscribePrice(this.langData['<strong>{{price}}</strong><br>per month']);
+    const title = this.createSectionTitle(this.langData.Monthly, ['section-title_active']);
+    const subscribePrice = this.createSectionSubscribePrice(
+      this.langData['<strong>{{price}}</strong><br>per month'],
+      MONTHLY_SUBSCRIBE_PRICE
+    );
     const saleFeature = this.createSectionSaleFeature(this.langData['3 DAYS FREE']);
-    const cost = this.createSectionCost(this.langData['{{price}}/month']);
+    const cost = this.createSectionCost(this.langData['{{price}}/month'], MONTHLY_COST);
 
     section.append(title, subscribePrice, saleFeature, cost);
     return section;
@@ -85,10 +94,13 @@ export class Offer extends LocalizationService {
 
   private buildAnnuallySection(): HTMLDivElement {
     const section = this.createAnnuallySection();
-    const title = this.createSectionTitle(this.langData.Annually);
-    const subscribePrice = this.createSectionSubscribePrice(this.langData['<strong>{{price}}</strong><br>per month']);
+    const title = this.createSectionTitle(this.langData.Annually, ['section-title_passive']);
+    const subscribePrice = this.createSectionSubscribePrice(
+      this.langData['<strong>{{price}}</strong><br>per month'],
+      ANNUALLY_SUBSCRIBE_PRICE
+    );
     const saleFeature = this.createSectionSaleFeature(this.langData['MOST POPULAR']);
-    const cost = this.createSectionCost(this.langData['{{price}}/month']);
+    const cost = this.createSectionCost(this.langData['{{price}}/month'], ANNUALLY_COST);
 
     section.append(title, subscribePrice, saleFeature, cost);
     return section;

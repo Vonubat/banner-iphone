@@ -24,8 +24,16 @@
   background-size: cover;
 }
 
-@mixin center-inside-elem() {
+@mixin center-inside-elem-flex() {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin center-inside-elem-absolute() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }

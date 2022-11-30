@@ -1,14 +1,55 @@
 .offer-container {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 297px;
+  height: 181px;
 }
 
-.monthly-section {
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
-.annually-section {
+.section-bg {
+  @include center-inside-elem-absolute();
 }
 
-.section-title {
+.section__monthly {
+}
+
+.section__monthly_active {
+  width: 151px;
+  height: 178px;
+}
+
+.section__monthly_passive {
+}
+
+.section-bg__monthly {
+}
+
+.section__annually {
+}
+
+.section__annually_active {
+}
+
+.section__annually_passive {
+  width: 137px;
+  height: 162px;
+}
+
+.section-bg__annually {
+}
+
+.section-title_active {
+}
+
+.section-title_passive {
 }
 
 .section-subscribe-price {
