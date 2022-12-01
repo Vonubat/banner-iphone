@@ -1,15 +1,15 @@
 .anchor-restore {
   font-family: 'SF Pro Text';
-  font-size: 13px;
-  letter-spacing: -0.21666669845581055px;
+  font-size: 0.813rem;
+  letter-spacing: -0.014rem;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
 }
 
 .title {
   font-family: 'SF Pro Display';
-  font-size: 36px;
-  line-height: 42px;
+  font-size: 2.25rem;
+  line-height: 2.625rem;
   text-align: center;
   color: $color-white;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
@@ -17,34 +17,34 @@
 
 .content-title {
   font-family: 'SF Pro Text';
-  font-size: 17px;
-  line-height: 30px;
-  letter-spacing: -0.321111px;
+  font-size: 1.063rem;
+  line-height: 1.875rem;
+  letter-spacing: -0.02rem;
   color: $color-white;
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.684495);
 }
 
 .section-title {
   font-family: 'SF Pro Display';
-  font-size: 16.9983px;
-  line-height: 20px;
+  font-size: 1.063rem;
+  line-height: 1.25rem;
   color: $color-white;
 
   &_active {
-    font-size: 18.7px;
-    line-height: 22px;
+    font-size: 1.169rem;
+    line-height: 1.375rem;
   }
 }
 
 .sale-badge {
   font-family: 'SF Pro Display';
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 0.625rem;
+  line-height: 0.75rem;
   color: $color-white;
 
   &_active {
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
   }
 }
 
@@ -52,19 +52,19 @@
   font-family: 'SF Pro Display';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 15px;
+  font-size: 0.875rem;
+  line-height: 0.938rem;
   color: $color-white;
 
   strong {
     font-weight: 700;
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 
   &_active {
-    font-size: 15.4px;
+    font-size: 0.963rem;
     strong {
-      font-size: 24px;
+      font-size: 1.5rem;
     }
   }
 }
@@ -73,32 +73,32 @@
   font-family: 'SF Pro Display';
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 13.9986px;
-  line-height: 16px;
+  font-size: 0.875rem;
+  line-height: 1rem;
   color: $color-white;
 
   &_active {
-    font-size: 15.4px;
-    line-height: 18px;
+    font-size: 0.963rem;
+    line-height: 1.125rem;
   }
 }
 
 .section-cost {
   font-family: 'SF Pro Display';
   color: $color-white;
-  font-size: 11.9988px;
-  line-height: 14px;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
 
   &_active {
-    font-size: 13.2px;
-    line-height: 15px;
+    font-size: 0.825rem;
+    line-height: 0.938rem;
   }
 }
 
 .button {
   font-family: 'SF Pro Display';
-  font-size: 17px;
-  line-height: 17px;
+  font-size: 1.063rem;
+  line-height: 1.063rem;
   text-align: center;
   text-decoration: none;
   color: $color-white;
@@ -108,8 +108,8 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 11px;
-  line-height: 13px;
+  font-size: 0.688rem;
+  line-height: 0.813rem;
   text-align: center;
   mix-blend-mode: normal;
   opacity: 0.5;
@@ -120,8 +120,8 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 11px;
-  line-height: 13px;
+  font-size: 0.688rem;
+  line-height: 0.813rem;
   text-decoration-line: underline;
   color: $color-anchor-footer;
 }
