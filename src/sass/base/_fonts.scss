@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'SF Pro Display';
   src: local('SF Pro Display Bold'), local('SFProDisplay-Bold'),
-    url('/src/fonts/SFProDisplay/SFProDisplay-Bold.ttf') format('truetype');
+    url('/src/assets/fonts/SFProDisplay/SFProDisplay-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -12,7 +12,7 @@
 @font-face {
   font-family: 'SF Pro Display';
   src: local('SF Pro Display Medium'), local('SFProDisplay-Medium'),
-    url('/src/fonts/SFProDisplay/SFProDisplay-Medium.ttf') format('truetype');
+    url('/src/assets/fonts/SFProDisplay/SFProDisplay-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -21,7 +21,7 @@
 @font-face {
   font-family: 'SF Pro Display';
   src: local('SF Pro Display Regular'), local('SFProDisplay-Regular'),
-    url('/src/fonts/SFProDisplay/SFProDisplay-Regular.ttf') format('truetype');
+    url('/src/assets/fonts/SFProDisplay/SFProDisplay-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -30,7 +30,7 @@
 @font-face {
   font-family: 'SF Pro Text';
   src: local('SF Pro Text Regular'), local('SFProText-Regular'),
-    url('/src/fonts/SFProText/SFProText-Regular.ttf') format('truetype');
+    url('/src/assets/fonts/SFProText/SFProText-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
