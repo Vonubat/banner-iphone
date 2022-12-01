@@ -9,13 +9,6 @@ export class Footer extends LocalizationService {
     });
   }
 
-  private createAutoRenewable(): HTMLSpanElement {
-    return createHTMLElement('span', {
-      cssClassList: ['auto-renewable'],
-      innerHtml: this.langData['Auto-renewable. Cancel anytime.'],
-    });
-  }
-
   private createAnchor(innerHtml: Localization[keyof Localization]): HTMLAnchorElement {
     return createHTMLElement('a', {
       attributes: [['href', '#']],
@@ -27,9 +20,9 @@ export class Footer extends LocalizationService {
   public render(): HTMLElement {
     const footer = this.createFooter();
     const anchorTerms = this.createAnchor(this.langData['Terms of Use']);
-    const autoRenewable = this.createAutoRenewable();
+
     const anchorPrivacy = this.createAnchor(this.langData['Privacy Policy']);
-    footer.append(anchorTerms, autoRenewable, anchorPrivacy);
+    footer.append(anchorTerms, anchorPrivacy);
     return footer;
   }
 }
