@@ -1,5 +1,6 @@
 .auto-renewable {
   margin-top: 16px;
+  animation: append-animate 0.3s linear;
 
   @include for-device(map-get($iphone, SE-8)) {
     margin-top: 10px;

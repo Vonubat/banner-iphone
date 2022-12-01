@@ -4,6 +4,7 @@
   align-items: center;
   width: 335px;
   margin-top: 40px;
+  animation: append-animate 0.3s linear;
 
   @include for-device(map-get($iphone, SE-8)) {
     margin-top: 10px;

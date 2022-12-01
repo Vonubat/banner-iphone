@@ -3,6 +3,7 @@
   height: 86px;
   margin-top: 153px;
   margin-bottom: 0px;
+  animation: append-animate 0.3s linear;
 
   @include for-device(map-get($iphone, SE-8)) {
     height: 76px;
