@@ -50,28 +50,38 @@ export class Offer extends LocalizationService {
     return annuallySection;
   }
 
-  private createSectionTitle(innerHtml: Localization[keyof Localization], cssClassList: string[]): HTMLSpanElement {
+  private createSectionTitle(
+    innerHtml: Localization[keyof Localization],
+    state: 'active' | 'passive'
+  ): HTMLSpanElement {
     return createHTMLElement('span', {
-      cssClassList: [...cssClassList],
+      cssClassList: ['section-title', `section-title_${state}`],
       innerHtml,
     });
   }
 
-  private createSectionSubscribePrice(innerHtml: Localization[keyof Localization], price: string): HTMLSpanElement {
+  private createSectionSubscribePrice(
+    innerHtml: Localization[keyof Localization],
+    state: 'active' | 'passive',
+    price: string
+  ): HTMLSpanElement {
     const modifiedInnerHtml = addPrice(innerHtml, price);
     return createHTMLElement('span', {
-      cssClassList: ['section-subscribe-price'],
+      cssClassList: ['section-subscribe-price', `section-subscribe-price_${state}`],
       innerHtml: modifiedInnerHtml,
     });
   }
 
-  private createSectionSaleFeature(innerHtml: Localization[keyof Localization]): HTMLSpanElement {
+  private createSectionSaleFeature(
+    innerHtml: Localization[keyof Localization],
+    state: 'active' | 'passive'
+  ): HTMLSpanElement {
     const saleFeatureContainer = createHTMLElement('div', {
-      cssClassList: ['section-sale-feature-container'],
+      cssClassList: ['section-sale-feature-container', `section-sale-feature-container_${state}`],
     });
 
     const saleFeatureText = createHTMLElement('span', {
-      cssClassList: ['section-sale-feature-text'],
+      cssClassList: ['section-sale-feature-text', `section-sale-feature-text_${state}`],
       innerHtml,
     });
 
@@ -89,12 +99,13 @@ export class Offer extends LocalizationService {
 
   private buildMonthlySection(): HTMLDivElement {
     const section = this.createMonthlySection();
-    const title = this.createSectionTitle(this.langData.Monthly, ['section-title', 'section-title_active']);
+    const title = this.createSectionTitle(this.langData.Monthly, 'active');
     const subscribePrice = this.createSectionSubscribePrice(
       this.langData['<strong>{{price}}</strong><br>per month'],
+      'active',
       MONTHLY_SUBSCRIBE_PRICE
     );
-    const saleFeature = this.createSectionSaleFeature(this.langData['3 DAYS FREE']);
+    const saleFeature = this.createSectionSaleFeature(this.langData['3 DAYS FREE'], 'active');
     const cost = this.createSectionCost(this.langData['{{price}}/month'], MONTHLY_COST);
 
     section.append(title, subscribePrice, saleFeature, cost);
@@ -103,12 +114,13 @@ export class Offer extends LocalizationService {
 
   private buildAnnuallySection(): HTMLDivElement {
     const section = this.createAnnuallySection();
-    const title = this.createSectionTitle(this.langData.Annually, ['section-title', 'section-title_passive']);
+    const title = this.createSectionTitle(this.langData.Annually, 'passive');
     const subscribePrice = this.createSectionSubscribePrice(
       this.langData['<strong>{{price}}</strong><br>per month'],
+      'passive',
       ANNUALLY_SUBSCRIBE_PRICE
     );
-    const saleFeature = this.createSectionSaleFeature(this.langData['MOST POPULAR']);
+    const saleFeature = this.createSectionSaleFeature(this.langData['MOST POPULAR'], 'passive');
     const cost = this.createSectionCost(this.langData['{{price}}/month'], ANNUALLY_COST);
 
     section.append(title, subscribePrice, saleFeature, cost);

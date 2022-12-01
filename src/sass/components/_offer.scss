@@ -52,7 +52,7 @@
   position: absolute;
   top: -1px;
   right: 2px;
-  background-color: #db0000;
+  background-color: $color-sale-badge;
 }
 
 .sale-badge_active {
@@ -76,7 +76,23 @@
 .section-subscribe-price {
 }
 
+.section-subscribe-price_active {
+}
+
+.section-subscribe-price_passive {
+}
+
 .section-sale-feature-container {
+  @include center-inside-elem-flex;
+  background: $color-sale-feature;
+}
+
+.section-sale-feature-container_active {
+  height: 22px;
+}
+
+.section-sale-feature-container_passive {
+  height: 20px;
 }
 
 .section-sale-feature-text {
