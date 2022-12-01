@@ -26,72 +26,71 @@
 
 .section-title {
   font-family: 'SF Pro Display';
-  color: $color-white;
-}
-
-.section-title_active {
-  font-size: 18.7px;
-  line-height: 22px;
-}
-
-.section-title_passive {
   font-size: 16.9983px;
   line-height: 20px;
+  color: $color-white;
+
+  &_active {
+    font-size: 18.7px;
+    line-height: 22px;
+  }
 }
 
 .sale-badge {
   font-family: 'SF Pro Display';
-  color: $color-white;
-}
-
-.sale-badge_active {
-  font-size: 12px;
-  line-height: 14px;
-}
-
-.sale-badge_passive {
   font-size: 10px;
   line-height: 12px;
+  color: $color-white;
+
+  &_active {
+    font-size: 12px;
+    line-height: 14px;
+  }
 }
 
 .section-subscribe-price {
   font-family: 'SF Pro Display';
   font-style: normal;
-  color: $color-white;
-}
-
-.section-subscribe-price_active {
-  line-height: 15px;
-  font-weight: 400;
-  font-size: 15.4px;
-  strong {
-    font-weight: 700;
-    font-size: 24px;
-  }
-}
-
-.section-subscribe-price_passive {
-  line-height: 15px;
   font-weight: 400;
   font-size: 14px;
+  line-height: 15px;
+  color: $color-white;
+
   strong {
     font-weight: 700;
     font-size: 22px;
+  }
+
+  &_active {
+    font-size: 15.4px;
+    strong {
+      font-size: 24px;
+    }
   }
 }
 
 .section-sale-feature-text {
   font-family: 'SF Pro Display';
   text-transform: uppercase;
-  color: $color-white;
-}
-
-.section-sale-feature-text_active {
-  font-size: 15.4px;
-  line-height: 18px;
-}
-
-.section-sale-feature-text_passive {
+  font-weight: bold;
   font-size: 13.9986px;
   line-height: 16px;
+  color: $color-white;
+
+  &_active {
+    font-size: 15.4px;
+    line-height: 18px;
+  }
+}
+
+.section-cost {
+  font-family: 'SF Pro Display';
+  color: $color-white;
+  font-size: 11.9988px;
+  line-height: 14px;
+
+  &_active {
+    font-size: 13.2px;
+    line-height: 15px;
+  }
 }

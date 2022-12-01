@@ -25,3 +25,7 @@ export const MONTHLY_COST = '$9.99';
 export const ANNUALLY_SUBSCRIBE_PRICE = '$19.99';
 
 export const ANNUALLY_COST = '$1.66';
+
+export const MONTHLY_ID = 'sectionMonthly';
+
+export const ANNUALLY_ID = 'sectionAnnually';
