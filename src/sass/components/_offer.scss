@@ -1,6 +1,6 @@
 .offer-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 297px;
   height: 181px;
@@ -13,7 +13,6 @@
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
-  transition: all 0.1s;
 }
 
 .section-bg {
@@ -23,8 +22,10 @@
 .section__monthly {
   width: 137px;
   height: 162px;
+  opacity: 0.5;
 
   &_active {
+    opacity: 1;
     width: 151px;
     height: 178px;
   }
@@ -33,8 +34,10 @@
 .section__annually {
   width: 137px;
   height: 162px;
+  opacity: 0.25;
 
   &_active {
+    opacity: 1;
     width: 151px;
     height: 181px;
   }
@@ -51,6 +54,8 @@
   border-radius: 15px;
 
   &_active {
+    top: -2px;
+    right: 0px;
     width: 38px;
     height: 38px;
     border-radius: 19.2px;
@@ -65,4 +70,8 @@
   &_active {
     height: 22px;
   }
+}
+
+.section-title {
+  margin-top: 10px;
 }

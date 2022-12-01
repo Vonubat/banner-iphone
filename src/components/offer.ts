@@ -10,6 +10,7 @@ import {
   MONTHLY_SUBSCRIBE_PRICE,
 } from '../constants';
 import { addPrice } from '../utils/priceHandler';
+import { svgChangeSizesHelper } from '../utils/svgChangeSizesHelper';
 
 export class Offer extends LocalizationService {
   sectionMonthly: HTMLDivElement | undefined;
@@ -175,11 +176,21 @@ export class Offer extends LocalizationService {
     if (id === MONTHLY_ID) {
       this.sectionMonthly?.classList.add('section__monthly_active');
       this.sectionAnnually?.classList.remove('section__annually_active');
+
+      svgChangeSizesHelper(this.sectionMonthly?.children[0] as SVGSVGElement, '151px', '180px');
+      svgChangeSizesHelper(this.sectionAnnually?.children[0] as SVGSVGElement, '137px', '164px');
+
+      this.sectionAnnually?.children[1]?.classList.remove('sale-badge_active');
     }
 
     if (id === ANNUALLY_ID) {
       this.sectionMonthly?.classList.remove('section__monthly_active');
       this.sectionAnnually?.classList.add('section__annually_active');
+
+      svgChangeSizesHelper(this.sectionMonthly?.children[0] as SVGSVGElement, '137px', '164px');
+      svgChangeSizesHelper(this.sectionAnnually?.children[0] as SVGSVGElement, '151px', '180px');
+
+      this.sectionAnnually?.children[1]?.classList.add('sale-badge_active');
     }
   }
 
@@ -244,8 +255,6 @@ export class Offer extends LocalizationService {
       this.handleSaleFeatureState(id);
       this.handleCostState(id);
     }
-
-    // this.costMonthly = this.createSectionCost(this.langData['{{price}}/month'], 'active', MONTHLY_COST);
   }
 
   public render(): HTMLDivElement {
