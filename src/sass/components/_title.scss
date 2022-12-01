@@ -13,4 +13,8 @@
     margin-top: 163px;
     height: 76px;
   }
+
+  @include for-device(map-get($iphone, 14)) {
+    margin-top: calc(153px * 1.04);
+  }
 }
