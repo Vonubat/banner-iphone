@@ -103,3 +103,25 @@
   text-decoration: none;
   color: $color-white;
 }
+
+.auto-renewable {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  color: $color-white;
+}
+
+.anchor-footer {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  text-decoration-line: underline;
+  color: $color-anchor-footer;
+}

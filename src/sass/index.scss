@@ -9,6 +9,11 @@
 @import './components/content';
 @import './components/offer';
 @import './components/button';
+@import './layout/footer';
+
+html {
+  font-size: 16px;
+}
 
 #root {
   display: flex;

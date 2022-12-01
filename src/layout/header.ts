@@ -2,6 +2,12 @@ import { LocalizationService } from '../services/localizationService';
 import { createHTMLElement, createSVGElement } from '../utils/htmlElementFactory';
 
 export class Header extends LocalizationService {
+  private createHeader(): HTMLElement {
+    return createHTMLElement('header', {
+      cssClassList: ['header'],
+    });
+  }
+
   private createRestoreAnchor(): HTMLAnchorElement {
     return createHTMLElement('a', {
       attributes: [['href', '#']],
@@ -24,9 +30,7 @@ export class Header extends LocalizationService {
   }
 
   public render(): HTMLElement {
-    const header = createHTMLElement('header', {
-      cssClassList: ['header'],
-    });
+    const header = this.createHeader();
     const closeBtn = this.createCloseAnchor();
     const restoreAnchor = this.createRestoreAnchor();
     header.append(closeBtn, restoreAnchor);
