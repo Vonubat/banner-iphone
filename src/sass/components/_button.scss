@@ -1,0 +1,18 @@
+.button {
+  width: 280px;
+  height: 54px;
+  border-radius: 30px;
+  border: 0px;
+  padding: 0;
+  margin-top: 16px;
+  background: $color-button;
+  animation: append-animate 0.3s linear;
+
+  @include for-device(map-get($iphone, SE-8)) {
+    margin-top: 10px;
+  }
+
+  @include for-device(map-get($iphone, 14)) {
+    margin-top: calc(32px);
+  }
+}

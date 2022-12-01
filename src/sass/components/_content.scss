@@ -1,0 +1,41 @@
+.content-container {
+  width: 208.5px;
+  height: 91.45px;
+  margin-left: 11px;
+  margin-top: 29px;
+  animation: append-animate 0.3s linear;
+
+  @include for-device(map-get($iphone, SE-8)) {
+    height: 85px;
+    margin-top: 15px;
+  }
+
+  @include for-device(map-get($iphone, 8plus)) {
+    height: 85px;
+    margin-top: 15px;
+  }
+
+  @include for-device(map-get($iphone, 14)) {
+    margin-top: calc(29px * 1.04);
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon-wrapper {
+  @include center-inside-elem-flex();
+  width: 26px;
+}
+
+/*
+.content-title__unlim-docs {
+}
+.content-title__ocr {
+}
+.content-title__export {
+}
+*/

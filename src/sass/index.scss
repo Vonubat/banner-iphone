@@ -1,0 +1,44 @@
+@import 'normalize.css';
+@import './base/fonts';
+@import './abstracts/variables';
+@import './abstracts/animations';
+@import './base/typography';
+@import './abstracts/mixins';
+@import './components/anchors';
+@import './layout/header';
+@import './components/title';
+@import './components/content';
+@import './components/offer';
+@import './components/button';
+@import './components/auto-renewable';
+@import './layout/footer';
+
+html {
+  font-size: 16px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+  @include for-device(map-get($iphone, SE-8)) {
+    @include set-bg-image($x1-bg-img);
+    background-position: 0 -35px;
+  }
+
+  @include for-device(map-get($iphone, 8plus)) {
+    @include set-bg-image($x2-bg-img);
+    background-position: 0 -25px;
+  }
+
+  @include for-device(map-get($iphone, X-11pro)) {
+    @include set-bg-image($x3-bg-img);
+  }
+
+  @include for-device(map-get($iphone, 14)) {
+    @include set-bg-image($x3-bg-img);
+  }
+}

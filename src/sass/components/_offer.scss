@@ -1,0 +1,90 @@
+.offer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 297px;
+  height: 181px;
+  margin-top: 44px;
+  animation: append-animate 0.3s linear;
+
+  @include for-device(map-get($iphone, SE-8)) {
+    margin-top: 20px;
+  }
+
+  @include for-device(map-get($iphone, 8plus)) {
+    margin-top: 30px;
+  }
+
+  @include for-device(map-get($iphone, 14)) {
+    margin-top: calc(44px * 1.04);
+  }
+}
+
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.section-bg {
+  @include center-inside-elem-absolute();
+}
+
+.section__monthly {
+  width: 137px;
+  height: 162px;
+  opacity: 0.5;
+
+  &_active {
+    opacity: 1;
+    width: 151px;
+    height: 178px;
+  }
+}
+
+.section__annually {
+  width: 137px;
+  height: 162px;
+  opacity: 0.25;
+
+  &_active {
+    opacity: 1;
+    width: 151px;
+    height: 181px;
+  }
+}
+
+.sale-badge {
+  @include center-inside-elem-flex;
+  position: absolute;
+  top: -1px;
+  right: 2px;
+  background-color: $color-sale-badge;
+  width: 32px;
+  height: 32px;
+  border-radius: 15px;
+
+  &_active {
+    top: -1.5px;
+    right: 0px;
+    width: 38px;
+    height: 38px;
+    border-radius: 19.2px;
+  }
+}
+
+.section-sale-feature-container {
+  @include center-inside-elem-flex;
+  background: $color-sale-feature;
+  height: 20px;
+
+  &_active {
+    height: 22px;
+  }
+}
+
+.section-title {
+  margin-top: 10px;
+}

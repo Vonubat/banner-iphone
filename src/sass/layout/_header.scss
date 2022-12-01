@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 335px;
+  margin-top: 40px;
+  animation: append-animate 0.3s linear;
+
+  @include for-device(map-get($iphone, SE-8)) {
+    margin-top: 10px;
+  }
+
+  @include for-device(map-get($iphone, 8plus)) {
+    margin-top: 20px;
+  }
+
+  @include for-device(map-get($iphone, 14)) {
+    margin-top: calc(40px * 1.04);
+  }
+}

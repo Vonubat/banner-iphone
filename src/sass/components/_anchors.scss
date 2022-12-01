@@ -1,0 +1,9 @@
+.anchor-cancel {
+  @include center-inside-elem-flex();
+  width: 24px;
+  height: 24px;
+}
+
+.anchor-restore {
+  height: 15px;
+}

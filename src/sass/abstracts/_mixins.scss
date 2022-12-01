@@ -1,0 +1,38 @@
+@mixin for-device($size) {
+  @if $size == map-get($iphone, 14) {
+    @media only #{$media} and (width: $width-14) and (height: $height-14) and (orientation: $orientation-value) and ($ratio-feature: $ratio-14) {
+      @content;
+    }
+  } @else if $size == map-get($iphone, X-11pro) {
+    @media only #{$media} and (width: $width-X-11pro) and (height: $height-X-11pro) and (orientation: $orientation-value) and ($ratio-feature: $ratio-X-11pro) {
+      @content;
+    }
+  } @else if $size == map-get($iphone, 8plus) {
+    @media only #{$media} and (width: $width-8plus) and (height: $height-8plus) and (orientation: $orientation-value) and ($ratio-feature: $ratio-8plus) {
+      @content;
+    }
+  } @else if $size == map-get($iphone, SE-8) {
+    @media only #{$media} and (width: $width-SE-8) and (height: $height-SE-8) and (orientation: $orientation-value) and ($ratio-feature: $ratio-SE-8) {
+      @content;
+    }
+  }
+}
+
+@mixin set-bg-image($img) {
+  background-image: url($img);
+  background-size: cover;
+}
+
+@mixin center-inside-elem-flex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center-inside-elem-absolute() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
