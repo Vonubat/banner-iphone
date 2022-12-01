@@ -20,8 +20,8 @@ export class Footer extends LocalizationService {
   public render(): HTMLElement {
     const footer = this.createFooter();
     const anchorTerms = this.createAnchor(this.langData['Terms of Use']);
-
     const anchorPrivacy = this.createAnchor(this.langData['Privacy Policy']);
+
     footer.append(anchorTerms, anchorPrivacy);
     return footer;
   }
