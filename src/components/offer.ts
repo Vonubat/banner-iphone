@@ -5,12 +5,15 @@ import {
   ANNUALLY_COST,
   ANNUALLY_ID,
   ANNUALLY_SUBSCRIBE_PRICE,
+  APPLE_LINK,
+  GOOGLE_LINK,
   MONTHLY_COST,
   MONTHLY_ID,
   MONTHLY_SUBSCRIBE_PRICE,
 } from '../constants';
 import { addPrice } from '../utils/priceHandler';
 import { svgChangeSizesHelper } from '../utils/svgChangeSizesHelper';
+import { Button } from './button';
 
 export class Offer extends LocalizationService {
   sectionMonthly: HTMLDivElement | undefined;
@@ -254,6 +257,14 @@ export class Offer extends LocalizationService {
       this.handleSubscribePriceState(id);
       this.handleSaleFeatureState(id);
       this.handleCostState(id);
+    }
+
+    if (id === MONTHLY_ID) {
+      Button.activeLink = APPLE_LINK;
+    }
+
+    if (id === ANNUALLY_ID) {
+      Button.activeLink = GOOGLE_LINK;
     }
   }
 
