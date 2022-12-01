@@ -5,6 +5,10 @@
   width: 297px;
   height: 181px;
   margin-top: 44px;
+
+  @include for-device(map-get($iphone, SE-8)) {
+    margin-top: 20px;
+  }
 }
 
 .section {

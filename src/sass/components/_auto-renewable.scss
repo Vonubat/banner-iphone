@@ -1,3 +1,7 @@
 .auto-renewable {
   margin-top: 16px;
+
+  @include for-device(map-get($iphone, SE-8)) {
+    margin-top: 10px;
+  }
 }

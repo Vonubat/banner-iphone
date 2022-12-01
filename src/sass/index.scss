@@ -25,6 +25,7 @@ html {
 
   @include for-device(map-get($iphone, SE-8)) {
     @include set-bg-image($x1-bg-img);
+    background-position: 0 -35px;
   }
 
   @include for-device(map-get($iphone, 8plus)) {

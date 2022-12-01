@@ -4,4 +4,8 @@
   align-items: center;
   width: 335px;
   margin-top: 40px;
+
+  @include for-device(map-get($iphone, SE-8)) {
+    margin-top: 10px;
+  }
 }
